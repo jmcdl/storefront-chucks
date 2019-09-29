@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+This software is in the public domain under CC0 1.0 Universal plus a
+Grant of Patent License.
+
+To the extent possible under law, the author(s) have dedicated all
+copyright and related and neighboring rights to this software to the
+public domain worldwide. This software is distributed without any
+warranty.
+
+You should have received a copy of the CC0 Public Domain Dedication
+along with this software (see the LICENSE.md file). If not, see
+<http://creativecommons.org/publicdomain/zero/1.0/>.
+-->
+<entity-facade-xml type="demo">
+
+	<mantle.party.Party partyId="ORG_FACELESS_CORP" pseudoId="FACELESS_CORP" partyTypeEnumId="PtyOrganization" ownerPartyId="ORG_FACELESS_CORP">
+		<organization organizationName="Faceless Global Textile Distributor"/>
+		<roles roleTypeId="OrgInternal"/>
+	</mantle.party.Party>
+
+	<!-- Ziziwork Retail Warehouse Facility -->
+	<mantle.facility.Facility facilityId="FACELESS_CORP_WH" facilityTypeEnumId="FcTpWarehouse" assetAllowIssueOverQoh="Y"
+		ownerPartyId="ORG_FACELESS_CORP" facilityName="Faceless Corporation's Retail Warehouse">
+		<!--<contactMechs contactMechId="ORG_ZIZI_RTL_SA" contactMechPurposeId="PostalPrimary"/>-->
+		<!--<contactMechs contactMechId="ORG_ZIZI_RTL_PT" contactMechPurposeId="PhonePrimary"/>-->
+	</mantle.facility.Facility>
+
+	<!-- Ziziwork Retail ProductStore -->
+	<mantle.product.store.ProductStore productStoreId="CHUCKS_STORE" storeName="Chucks Retail Store"
+		organizationPartyId="ORG_FACELESS_CORP" inventoryFacilityId="FACELESS_CORP_WH" reservationOrderEnumId="AsResOrdFifoRec"
+		wikiSpaceId="" defaultLocale="en_US" defaultCurrencyUomId="USD" taxGatewayConfigId="LOCAL" requireInventory="Y" productDataDocumentId="">
+		<!--use these to limit options for store, defaults to all CarrierShipmentMethod options for each carrier there is a shipping gateway for:-->
+		<shipOptions carrierPartyId="_NA_" shipmentMethodEnumId="ShMthGround" sequenceNum="1"/>
+		<shipOptions carrierPartyId="_NA_" shipmentMethodEnumId="ShMthNextDay" sequenceNum="2"/>
+		<shippingGateways carrierPartyId="_NA_" shippingGatewayConfigId="NA_LOCAL"/>
+		<paymentGateways paymentInstrumentEnumId="PiCreditCard" paymentGatewayConfigId="TEST_APPROVE"/>
+		<settings productStoreId="CHUCKS_STORE" settingTypeEnumId="PsstHostname" settingValue="chucks.com"/>
+		<settings productStoreId="CHUCKS_STORE" settingTypeEnumId="PsstTemplateServerRoot" settingValue="component://storefront-chucks/templates/root.html.ftl"/>
+		<settings productStoreId="CHUCKS_STORE" settingTypeEnumId="PsstTemplateServerHeader" settingValue="component://storefront-chucks/templates/header.html.ftl"/>
+		<settings productStoreId="CHUCKS_STORE" settingTypeEnumId="PsstTemplateServerFooter" settingValue="component://storefront-chucks/templates/footer.html.ftl"/>
+		<settings productStoreId="CHUCKS_STORE" settingTypeEnumId="PsstTemplateServerHome" settingValue="component://storefront-chucks/templates/home.html.ftl"/>
+		<settings productStoreId="CHUCKS_STORE" settingTypeEnumId="PsstTemplateServerProduct" settingValue="component://storefront-chucks/templates/product.html.ftl"/>
+	</mantle.product.store.ProductStore>
+
+   <!--Default product categories-->
+	<mantle.product.category.ProductCategory productCategoryId="ChucksHome" productCategoryTypeEnumId="PctCatalog"
+		categoryName="Home Page Category"/>
+	<mantle.product.store.ProductStoreCategory productStoreId="CHUCKS_STORE" productCategoryId="ChucksHome"
+		storeCategoryTypeEnumId="PsctHomePage"/>
+	<mantle.product.category.ProductCategory productCategoryId="ChucksBrowseRoot"
+		productCategoryTypeEnumId="PctCatalog" categoryName="Browse Root Category"/>
+	<mantle.product.store.ProductStoreCategory productStoreId="CHUCKS_STORE" productCategoryId="ChucksBrowseRoot"
+		storeCategoryTypeEnumId="PsctBrowseRoot"/>
+	<mantle.product.category.ProductCategory productCategoryId="ChucksAllProducts"
+		productCategoryTypeEnumId="PctCatalog" categoryName="All Products Category"/>
+	<mantle.product.store.ProductStoreCategory productStoreId="CHUCKS_STORE" productCategoryId="ChucksAllProducts"
+		storeCategoryTypeEnumId="PsctSearch"/>
+	<mantle.product.store.ProductStoreCategory productStoreId="CHUCKS_STORE" productCategoryId="ChucksAllProducts"
+		storeCategoryTypeEnumId="PsctViewAllow"/>
+	<mantle.product.store.ProductStoreCategory productStoreId="CHUCKS_STORE" productCategoryId="ChucksAllProducts"
+		storeCategoryTypeEnumId="PsctPurchaseAllow"/>
+
+	<!--Categories used in home.xml-->
+	<mantle.product.category.ProductCategory productCategoryId="ChucksDeals"
+		productCategoryTypeEnumId="PctCatalog" categoryName="Deals"/>
+	<mantle.product.store.ProductStoreCategory productStoreId="CHUCKS_STORE" productCategoryId="ChucksDeals"
+		storeCategoryTypeEnumId="PsctPromotions"/>
+	<mantle.product.category.ProductCategory productCategoryId="ChucksFeatured"
+		productCategoryTypeEnumId="PctCatalog" categoryName="Featured Best Sellers"/>
+	<mantle.product.store.ProductStoreCategory productStoreId="CHUCKS_STORE" productCategoryId="ChucksFeatured"
+		storeCategoryTypeEnumId="PsctFeatured"/>
+
+	<!--Unused categories-->
+	<mantle.product.category.ProductCategory productCategoryId="ChucksNew"
+	productCategoryTypeEnumId="PctCatalog" categoryName="New"/>
+	<mantle.product.store.ProductStoreCategory productStoreId="CHUCKS_STORE" productCategoryId="ChucksNew"
+	storeCategoryTypeEnumId="PsctNewProducts"/>
+
+</entity-facade-xml>

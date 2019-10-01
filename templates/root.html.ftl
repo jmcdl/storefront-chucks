@@ -13,9 +13,7 @@
 </head>
 
 <body>
-<div id="store-root">
-    ${sri.renderSubscreen()}
-</div>
+${sri.renderSubscreen()}
 <#if footerScriptText?has_content>${footerScriptText}</#if>
 <script src="/static/js/scripts.js"></script>
 </body>

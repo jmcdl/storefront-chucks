@@ -1,0 +1,93 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site/application.
+// -----------------------------------------------------------------------------
+
+.header {
+  //grid-row-start: 1;
+  //grid-row-end: 2;
+}
+
+.top-bar {
+  height: 40px;
+  width: 100%;
+  background-color: $secondary-color;
+  line-height: 30px;
+  text-align: center;
+  padding: 4px;
+
+  &__text {
+        color: $primary-color;
+    font-size: 0.9rem;
+    font-weight: 300;
+
+    &:hover {
+      color: $primary-color;
+      text-decoration: none;
+    }
+
+  }
+}
+
+.navbar {
+  background-color: $primary-color;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  overflow: hidden;
+  align-items: center;
+  padding-left: 100px;
+  padding-right: 100px;
+
+  &__logo {
+    //width: 170px;
+    font-size: 1.8rem;
+    font-weight: 200;
+    text-align: right;
+    margin: 0;
+  }
+
+  &__menu {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(6,auto);
+    padding: 0;
+    margin: 0 60px;
+  }
+
+  &__menu-item {
+    display: list-item;
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  &__user {
+    list-style: none;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    padding: 0;
+  }
+
+  &__user-menu-item {
+    display: list-item;
+    font-size: 0.95rem;
+    text-align: center;
+    margin: auto;
+  }
+
+  &__user-flag {
+    width: 35px;
+  }
+
+  &--sticky {
+    position: fixed;
+    top: 0;
+    //margin: 0;
+    box-shadow: 0px 1px 9px #8d8d8d;
+  }
+
+}
+
+.user-menu__icon {
+  width: 17px;
+  height: 17px;
+}

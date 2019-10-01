@@ -1,0 +1,33 @@
+.product-breadcrumb {
+  font-size: 1rem;
+  font-weight: normal;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.product-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  //padding-left: 100px;
+  //padding-right: 100px;
+  padding: 100px;
+
+}
+
+.product-image {
+  display: grid;
+  grid-template-columns: 76px 1fr;
+
+  &__thumbnails {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__thumbnail {
+    margin-top: 20px;
+  }
+
+  &__main {
+
+  }
+}

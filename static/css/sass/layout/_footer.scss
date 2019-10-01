@@ -1,0 +1,58 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the footer of the site/application.
+// -----------------------------------------------------------------------------
+
+.footer {
+  //grid-row-start: 3;
+  //grid-row-end: 4;
+  background-color: $secondary-color;
+  display: grid;
+  grid-template-rows: auto auto;
+  overflow: hidden;
+  align-items: center;
+}
+
+.footer-navbar {
+  padding: 40px 100px;
+
+  &__menu {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0 40px;
+  }
+
+  &__link {
+    color: $primary-color;
+    margin: 0 40px;
+    line-height: 40px;
+    font-weight: lighter;
+    font-size: 1rem;
+
+  }
+}
+
+.social-icons {
+  &__menu {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 100px;
+    max-width: 325px;
+  }
+
+  &__menu-item {
+    width: 26px;
+    opacity: 1;
+    margin: 0 40px;
+  }
+}
+

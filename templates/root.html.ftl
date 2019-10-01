@@ -9,6 +9,7 @@
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap">
   <link rel="stylesheet" href="/static/css/style.css">
+  <link>
 </head>
 
 <body>
@@ -16,5 +17,6 @@
     ${sri.renderSubscreen()}
 </div>
 <#if footerScriptText?has_content>${footerScriptText}</#if>
+<script src="/static/js/scripts.js"></script>
 </body>
 </html>

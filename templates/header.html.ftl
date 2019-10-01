@@ -4,7 +4,7 @@
   </div>
   <nav class="navbar">
     <h1 class="navbar__logo">
-      <a href="#" aria-label="Aquatalia®" title="Aquatalia®">CHUCKS</a>
+      <a href="/store" aria-label="Aquatalia®" title="Chucks Store">CHUCKS</a>
     </h1>
     <ul class="navbar__menu">
       <li class="navbar__menu-item"><a class="" href="" title="">Women</a></a></li>

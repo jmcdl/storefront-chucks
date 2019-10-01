@@ -1,6 +1,6 @@
 <main class="home-content">
   <section>
-    <img class="hero-image" src="static/images/woman-3377839_1280.jpg" alt="main-image"/>
+    <img class="hero-image" src="static/images/woman-3377839_1280.jpg" alt="banner-image"/>
   </section>
   <section class="twin-promos">
     <div class="product-card">
@@ -20,29 +20,27 @@
       <div class="product-card__caption">Printed Matters</div>
     </div>
   </section>
+    <#if featureProductList?has_content>
   <section class="featured-products">
     <div class="featured-products__heading-row">
       <h2 class="featured-products__heading-text">FEATURED PRODUCTS</h2>
     </div>
     <div class="featured-products__cards">
-      <div class="featured-products__card">
-        <img class="featured-products__img" src="static/images/sneakers-2768260_640.png" alt="">
-        <span class="product-name">PURPLE CHUCKS</span>
-        <span class="product-price">$99.99</span>
-      </div>
-      <div class="featured-products__card">
-        <img class="featured-products__img" src="static/images/sneakers-2768263_640.png" alt="">
-        <span class="product-name">GREEN CHUCKS</span>
-        <span class="product-price">$99.99</span>
-      </div>
-      <div class="featured-products__card">
-        <img class="featured-products__img" src="static/images/sneakers-2768264_640.png" alt="">
-        <span class="product-name">BLUE CHUCKS</span>
-        <span class="product-price">$99.99</span>
-      </div>
+        <#list featureProductList as product>
+          <div class="featured-products__card">
+              <#if product.mediumImageInfo??>
+                <a href="/store/product/${product.productId}"><img class="featured-products__img"
+                                                                   src="/store/content/productImage/${product.mediumImageInfo.productContentId}"
+                                                                   alt=""></a>
+              </#if>
+            <span class="product-name">${product.productName}</span>
+            <span class="product-price">${product.listPrice}</span>
+          </div>
+        </#list>
     </div>
   </section>
   <section class="email-subscription">
+      </#if>
 
   </section>
 </main>

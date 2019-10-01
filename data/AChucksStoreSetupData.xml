@@ -19,17 +19,24 @@ along with this software (see the LICENSE.md file). If not, see
 		<roles roleTypeId="OrgInternal"/>
 	</mantle.party.Party>
 
+	<mantle.party.Party partyId="ORG_CHUCKS" pseudoId="CHUCKS" partyTypeEnumId="PtyOrganization" ownerPartyId="ORG_CHUCKS">
+		<organization organizationName="Chucks Company"/>
+		<roles roleTypeId="OrgInternal"/>
+	</mantle.party.Party>
+	<mantle.party.PartyRelationship partyRelationshipId="ORG_CHUCKS" relationshipTypeEnumId="PrtOrgRollup"
+		fromPartyId="ORG_CHUCKS" fromRoleTypeId="OrgInternal" toPartyId="ORG_FACELESS_CORP" toRoleTypeId="OrgInternal"/>
+
 	<!-- Ziziwork Retail Warehouse Facility -->
-	<mantle.facility.Facility facilityId="FACELESS_CORP_WH" facilityTypeEnumId="FcTpWarehouse" assetAllowIssueOverQoh="Y"
-		ownerPartyId="ORG_FACELESS_CORP" facilityName="Faceless Corporation's Retail Warehouse">
+	<mantle.facility.Facility facilityId="CHUCKS_WH" facilityTypeEnumId="FcTpWarehouse" assetAllowIssueOverQoh="Y"
+		ownerPartyId="ORG_CHUCKS" facilityName="Chucks' Retail Warehouse">
 		<!--<contactMechs contactMechId="ORG_ZIZI_RTL_SA" contactMechPurposeId="PostalPrimary"/>-->
 		<!--<contactMechs contactMechId="ORG_ZIZI_RTL_PT" contactMechPurposeId="PhonePrimary"/>-->
 	</mantle.facility.Facility>
 
-	<!-- Ziziwork Retail ProductStore -->
+	<!-- Chucks Demo Store -->
 	<mantle.product.store.ProductStore productStoreId="CHUCKS_STORE" storeName="Chucks Retail Store"
-		organizationPartyId="ORG_FACELESS_CORP" inventoryFacilityId="FACELESS_CORP_WH" reservationOrderEnumId="AsResOrdFifoRec"
-		wikiSpaceId="" defaultLocale="en_US" defaultCurrencyUomId="USD" taxGatewayConfigId="LOCAL" requireInventory="Y" productDataDocumentId="">
+		organizationPartyId="ORG_CHUCKS" inventoryFacilityId="CHUCKS_WH" reservationOrderEnumId="AsResOrdFifoRec"
+		wikiSpaceId="" defaultLocale="en_US" defaultCurrencyUomId="USD" taxGatewayConfigId="LOCAL" requireInventory="Y">
 		<!--use these to limit options for store, defaults to all CarrierShipmentMethod options for each carrier there is a shipping gateway for:-->
 		<shipOptions carrierPartyId="_NA_" shipmentMethodEnumId="ShMthGround" sequenceNum="1"/>
 		<shipOptions carrierPartyId="_NA_" shipmentMethodEnumId="ShMthNextDay" sequenceNum="2"/>
@@ -76,5 +83,18 @@ along with this software (see the LICENSE.md file). If not, see
 	productCategoryTypeEnumId="PctCatalog" categoryName="New"/>
 	<mantle.product.store.ProductStoreCategory productStoreId="CHUCKS_STORE" productCategoryId="ChucksNew"
 	storeCategoryTypeEnumId="PsctNewProducts"/>
+
+	<!-- Search Config (DataDocuments for ElasticSearch) -->
+	<org.moqui.impl.EntityServices.cloneDataDocument dataDocumentId="MantleProduct" newDataDocumentId="ChucksProduct" newIndexName="chucks"/>
+	<moqui.entity.document.DataDocumentCondition dataDocumentId="ChucksProduct" fieldNameAlias="productStoreId" fieldValue="CHUCKS_STORE" postQuery="Y"/>
+	<moqui.entity.feed.DataFeed dataFeedId="ChucksSearch" dataFeedTypeEnumId="DTFDTP_RT_PUSH"
+		feedName="Chucks Search" feedReceiveServiceName="org.moqui.search.SearchServices.index#DataDocuments">
+		<documents dataDocumentId="ChucksProduct"/>
+	</moqui.entity.feed.DataFeed>
+
+	<mantle.product.store.ProductStore productStoreId="CHUCKS_STORE" productDataDocumentId="ChucksProduct"/>
+
+	<org.moqui.search.SearchServices.indexDataFeedDocuments dataFeedId="RcherbalsSearch"/>
+	<org.moqui.search.SearchServices.indexDataFeedDocuments dataFeedId="MantleSearch"/>
 
 </entity-facade-xml>

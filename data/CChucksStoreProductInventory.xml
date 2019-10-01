@@ -1,0 +1,84 @@
+<entity-facade-xml>
+	<mantle.product.Product productId="PURPLE_CHUCKS_PU_US10" productTypeEnumId="PtAsset" assetTypeEnumId="" assetClassEnumId=""
+		chargeShipping="Y" returnable="Y" productName="Classic Chuck Taylor&apos;s Shoes Purple US Size Ten" description="" ownerPartyId="ORG_CHUCKS">
+		<mantle.product.asset.Asset assetId="PURPLE_CHUCKS_PU_US10" assetTypeEnumId="AstTpInventory" classEnumId="AsClsInventoryFin"
+			statusId="AstAvailable" facilityId="CHUCKS_WH" locationSeqId="01010101" ownerPartyId="ORG_CHUCKS"
+			hasQuantity="Y" quantityOnHandTotal="15" availableToPromiseTotal="15"
+			acquireCost="17.50" acquireCostUomId="USD" receivedDate="1265184000000">
+			<mantle.product.asset.AssetDetail assetDetailId="PURPLE_CHUCKS_PU_US10" effectiveDate="1265184000000"
+				quantityOnHandDiff="15" availableToPromiseDiff="15"/>
+		</mantle.product.asset.Asset>
+	</mantle.product.Product>
+
+	<mantle.product.Product productId="PURPLE_CHUCKS_PU_US9" ownerPartyId="ORG_CHUCKS">
+		<mantle.product.asset.Asset assetId="PURPLE_CHUCKS_PU_US9" assetTypeEnumId="AstTpInventory" classEnumId="AsClsInventoryFin"
+			statusId="AstAvailable" facilityId="CHUCKS_WH" locationSeqId="01010102" ownerPartyId="ORG_CHUCKS"
+			hasQuantity="Y" quantityOnHandTotal="5" availableToPromiseTotal="5"
+			acquireCost="17.50" acquireCostUomId="USD" receivedDate="1265184000000">
+			<mantle.product.asset.AssetDetail assetDetailId="PURPLE_CHUCKS_PU_US9" effectiveDate="1265184000000"
+				quantityOnHandDiff="5" availableToPromiseDiff="5"/>
+		</mantle.product.asset.Asset>
+	</mantle.product.Product>
+
+	<mantle.product.Product productId="PURPLE_CHUCKS_PU_US8" ownerPartyId="ORG_CHUCKS">
+		<mantle.product.asset.Asset assetId="PURPLE_CHUCKS_PU_US8" assetTypeEnumId="AstTpInventory" classEnumId="AsClsInventoryFin"
+			statusId="AstAvailable" facilityId="CHUCKS_WH" locationSeqId="01010103" ownerPartyId="ORG_CHUCKS"
+			hasQuantity="Y" quantityOnHandTotal="12" availableToPromiseTotal="12"
+			acquireCost="17.50" acquireCostUomId="USD" receivedDate="1265184000000">
+			<mantle.product.asset.AssetDetail assetDetailId="PURPLE_CHUCKS_PU_US8" effectiveDate="1265184000000"
+				quantityOnHandDiff="12" availableToPromiseDiff="12"/>
+		</mantle.product.asset.Asset>
+	</mantle.product.Product>
+
+	<mantle.product.Product productId="PURPLE_CHUCKS_PU_US7" ownerPartyId="ORG_CHUCKS">
+		<mantle.product.asset.Asset assetId="PURPLE_CHUCKS_PU_US7" assetTypeEnumId="AstTpInventory" classEnumId="AsClsInventoryFin"
+			statusId="AstAvailable" facilityId="CHUCKS_WH" locationSeqId="01010104" ownerPartyId="ORG_CHUCKS"
+			hasQuantity="Y" quantityOnHandTotal="22" availableToPromiseTotal="22"
+			acquireCost="17.50" acquireCostUomId="USD" receivedDate="1265184000000">
+			<mantle.product.asset.AssetDetail assetDetailId="PURPLE_CHUCKS_PU_US7" effectiveDate="1265184000000"
+				quantityOnHandDiff="22" availableToPromiseDiff="22"/>
+		</mantle.product.asset.Asset>
+	</mantle.product.Product>
+
+	<mantle.product.Product productId="GREEN_CHUCKS_GR_US10" productTypeEnumId="PtAsset" assetTypeEnumId="" assetClassEnumId=""
+		chargeShipping="Y" returnable="Y" productName="Classic Chuck Taylor&apos;s Shoes Purple US Size Ten" description="" ownerPartyId="ORG_CHUCKS">
+		<mantle.product.asset.Asset assetId="GREEN_CHUCKS_GR_US10" assetTypeEnumId="AstTpInventory" classEnumId="AsClsInventoryFin"
+			statusId="AstAvailable" facilityId="CHUCKS_WH" locationSeqId="01010111" ownerPartyId="ORG_CHUCKS"
+			hasQuantity="Y" quantityOnHandTotal="15" availableToPromiseTotal="15"
+			acquireCost="17.50" acquireCostUomId="USD" receivedDate="1265184000000">
+			<mantle.product.asset.AssetDetail assetDetailId="GREEN_CHUCKS_GR_US10" effectiveDate="1265184000000"
+				quantityOnHandDiff="15" availableToPromiseDiff="15"/>
+		</mantle.product.asset.Asset>
+	</mantle.product.Product>
+
+	<mantle.product.Product productId="GREEN_CHUCKS_GR_US9" ownerPartyId="ORG_CHUCKS">
+		<mantle.product.asset.Asset assetId="GREEN_CHUCKS_GR_US9" assetTypeEnumId="AstTpInventory" classEnumId="AsClsInventoryFin"
+			statusId="AstAvailable" facilityId="CHUCKS_WH" locationSeqId="01010112" ownerPartyId="ORG_CHUCKS"
+			hasQuantity="Y" quantityOnHandTotal="5" availableToPromiseTotal="5"
+			acquireCost="17.50" acquireCostUomId="USD" receivedDate="1265184000000">
+			<mantle.product.asset.AssetDetail assetDetailId="GREEN_CHUCKS_GR_US9" effectiveDate="1265184000000"
+				quantityOnHandDiff="5" availableToPromiseDiff="5"/>
+		</mantle.product.asset.Asset>
+	</mantle.product.Product>
+
+	<mantle.product.Product productId="GREEN_CHUCKS_GR_US8" ownerPartyId="ORG_CHUCKS">
+		<mantle.product.asset.Asset assetId="GREEN_CHUCKS_GR_US8" assetTypeEnumId="AstTpInventory" classEnumId="AsClsInventoryFin"
+			statusId="AstAvailable" facilityId="CHUCKS_WH" locationSeqId="01010113" ownerPartyId="ORG_CHUCKS"
+			hasQuantity="Y" quantityOnHandTotal="12" availableToPromiseTotal="12"
+			acquireCost="17.50" acquireCostUomId="USD" receivedDate="1265184000000">
+			<mantle.product.asset.AssetDetail assetDetailId="GREEN_CHUCKS_GR_US8" effectiveDate="1265184000000"
+				quantityOnHandDiff="12" availableToPromiseDiff="12"/>
+		</mantle.product.asset.Asset>
+	</mantle.product.Product>
+
+	<mantle.product.Product productId="GREEN_CHUCKS_GR_US7" ownerPartyId="ORG_CHUCKS">
+		<mantle.product.asset.Asset assetId="GREEN_CHUCKS_GR_US7" assetTypeEnumId="AstTpInventory" classEnumId="AsClsInventoryFin"
+			statusId="AstAvailable" facilityId="CHUCKS_WH" locationSeqId="01010114" ownerPartyId="ORG_CHUCKS"
+			hasQuantity="Y" quantityOnHandTotal="22" availableToPromiseTotal="22"
+			acquireCost="17.50" acquireCostUomId="USD" receivedDate="1265184000000">
+			<mantle.product.asset.AssetDetail assetDetailId="GREEN_CHUCKS_GR_US7" effectiveDate="1265184000000"
+				quantityOnHandDiff="22" availableToPromiseDiff="22"/>
+		</mantle.product.asset.Asset>
+	</mantle.product.Product>
+
+</entity-facade-xml>

@@ -33,8 +33,8 @@
                                                                    src="/store/content/productImage/${product.mediumImageInfo.productContentId}"
                                                                    alt=""></a>
               </#if>
-            <span class="product-name">${product.productName}</span>
-            <span class="product-price">${product.listPrice}</span>
+            <span class="featured-products__product-name">${product.productName}</span>
+            <span class="featured-products__product-price">${product.listPrice}</span>
           </div>
         </#list>
     </div>

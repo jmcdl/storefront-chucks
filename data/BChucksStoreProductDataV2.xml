@@ -30,15 +30,15 @@
 		<features productFeatureId="SizeUs9" sequenceNum="5" applTypeEnumId="PfatSelectable"/>
 		<features productFeatureId="SizeUs10" sequenceNum="6" applTypeEnumId="PfatSelectable"/>
 		<contents productContentId="PURPLE_CHUCKS_DL" productContentTypeEnumId="PcntDescriptionLong" locale="en_US"
-			contentLocation="dbresource://mantle/content/product/PURPLE_CHUCKS/description_PurpleChucks.html"/>
+			contentLocation="dbresource://mantle/content/product/PURPLE_CHUCKS/description_PurpleChucks.html" sequenceNum="1"/>
 		<contents productContentId="PURPLE_CHUCKS_IL" productContentTypeEnumId="PcntImageLarge" locale="" description="Side"
-			contentLocation="dbresource://mantle/content/product/PURPLE_CHUCKS/imgLarge_PurpleChucks.png"/>
+			contentLocation="dbresource://mantle/content/product/PURPLE_CHUCKS/imgLarge_PurpleChucks.png" sequenceNum="2"/>
 		<contents productContentId="PURPLE_CHUCKS_ILR" productContentTypeEnumId="PcntImageLarge" locale="" description="Other Side"
-			contentLocation="dbresource://mantle/content/product/PURPLE_CHUCKS/imgLargeReverse_PurpleChucks.png"/>
+			contentLocation="dbresource://mantle/content/product/PURPLE_CHUCKS/imgLargeReverse_PurpleChucks.png" sequenceNum="3"/>
 		<contents productContentId="PURPLE_CHUCKS_IS" productContentTypeEnumId="PcntImageSmall" locale="" description="Side"
-			contentLocation="dbresource://mantle/content/product/PURPLE_CHUCKS/imgSmall_PurpleChucks.png"/>
+			contentLocation="dbresource://mantle/content/product/PURPLE_CHUCKS/imgSmall_PurpleChucks.png" sequenceNum="4"/>
 		<contents productContentId="PURPLE_CHUCKS_ISR" productContentTypeEnumId="PcntImageSmall" locale="" description="Side"
-			contentLocation="dbresource://mantle/content/product/PURPLE_CHUCKS/imgSmallReverse_PurpleChucks.png"/>
+			contentLocation="dbresource://mantle/content/product/PURPLE_CHUCKS/imgSmallReverse_PurpleChucks.png" sequenceNum="5"/>
 	</mantle.product.Product>
 	<!-- call a service to generate variants -->
 	<mantle.product.ProductServices.createVariantProducts productId="PURPLE_CHUCKS" productTypeEnumId="PtAsset"

@@ -3,7 +3,7 @@
 <moqui-conf xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/moqui-conf-2.1.xsd">
 	<screen-facade>
 		<screen location="component://webroot/screen/webroot.xml">
-			<subscreens-item name="store" menu-title="Chucks Store" menu-include="false"
+			<subscreens-item name="chucks" menu-title="Chucks Store" menu-include="false"
 				location="component://PopRestStore/screen/store.xml"/>
 			<subscreens-item name="static" menu-title="Chucks Store" menu-include="false"
 				location="component://storefront-chucks/static.xml"/>

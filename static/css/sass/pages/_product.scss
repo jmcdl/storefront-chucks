@@ -8,10 +8,7 @@
 .product-content {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  //padding-left: 100px;
-  //padding-right: 100px;
   padding: 100px;
-
 }
 
 .product-image {
@@ -29,5 +26,17 @@
 
   &__main {
 
+  }
+}
+
+.product-add {
+  display: grid;
+  grid-auto-rows: auto;
+  justify-items: center;
+  align-items: center;
+
+  &__product-name {
+    font-size: 2rem;
+    text-transform: uppercase;
   }
 }

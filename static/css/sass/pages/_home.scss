@@ -91,16 +91,16 @@
     width: 100%;
     margin-top: 60px;
   }
+  &__product-name {
+    margin-bottom: 0;
+    font-size: 1.2rem;
+    font-weight: lighter;
+  }
 
-}
-.product-name {
-  margin-bottom: 0;
-  font-size: 1.2rem;
-  font-weight: lighter;
+  &__product-price {
+    font-size: 1.2rem;
+    font-weight: lighter;
+    padding-left: 10px;
+  }
 }
 
-.product-price {
-  font-size: 1.2rem;
-  font-weight: lighter;
-  padding-left: 10px;
-}

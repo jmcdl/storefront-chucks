@@ -55,14 +55,9 @@
             <#elseif searchParameter??>
               <input type="hidden" value="${searchParameter}" name="searchParameter"/>
             </#if>
-            <input type="hidden" value="<#if selectedOptionId??>${selectedOptionId}<#else>${productId}</#if>" name="productId" id="productId" />
+            <input type="hidden" value="" name="productId" id="productId" />
             <input type="hidden" value="${product.priceUomId}" name="currencyUomId" />
             <input type="hidden" value="${ec.web.sessionToken}" name="moquiSessionToken"/>
-
-            <#if isVirtual>
-              <#assign featureTypes = variantsList.variantOptions.keySet()>
-            </#if>
-
             <div class="product-add__product-name">${product.productName}</div>
             <div class="product-add__product-price">
                 <#if (product.listPrice?? && product.listPrice > product.price)>
@@ -72,53 +67,34 @@
                 </#if>
             </div>
           <div class="product-add__features">
-          <#if isVirtual>
-              <#assign featureTypes = variantsList.listFeatures.keySet()>
-              <#list featureTypes![] as featureType>
-                <#assign variants = variantsList.listFeatures.get(featureType)>
-                <span class="product-add__feature-name">${featureType.description}</span>
-                  <select id="variantProduct${featureType?index}" required>
-                    <option value="" disabled <#if !selectedOptionId?? >selected</#if>>
-                        <#if featureType.description == "Size">Pick a size
-                        <#elseif featureType.description == "Color">Pick a color
-                        <#else>Select an Option
-                        </#if>
-                    </option>
-                      <#list variants![] as variant>
-                          <#assign isSelected = selectedOptionId?? && selectedOptionId == variant.productId />
-                        <option value="${variant.productId!}" <#if isSelected >selected</#if>>
-                            ${variant.description}
-                        </option>
+              <#assign features = (variantsList.listFeatures.keySet())![]>
+              <#list features as featureType>
+                  <#assign featureOpts = variantsList.listFeatures.get(featureType)>
+                  <#if featureOpts?size gt 1>
+                  ${featureType.description!}
+                  <select class="form-control featureSelect" name="${featureType.enumId}" required>
+                      <option value="" disabled selected>
+                          Select an Option 
+                      </option>
+                      <#list featureOpts![] as opt>
+                      <option value="${opt.productFeatureId}">
+                          ${opt.description!}  
+                      </option>
                       </#list>
                   </select>
-                </span>
+                  </#if>
               </#list>
-            </#if>
           </div>
-
+          <div id="addToCartSection">
             <div class="product-add__quantity">
               <label class="">Quantity <input class="product-add__quantity-input" name="quantity" value="1" type="number" min="1" max="20"/></label>
             </div>
-
-                <#if inStock>
-                  <button class="product-add__button" type="submit">
-                    <i class="fa fa-shopping-cart"></i>ADD TO CART
-                  </button>
-                </#if>
-                <#if !inStock>
-                  <button class="product-add__button-disabled" type="submit" disabled>Out of Stock
-                  </button>
-                </#if>
-              <!-- feedback add product -->
-<#--                <#if addedCorrect??>-->
-<#--                    <#if addedCorrect == 'true'>-->
-<#--                      <input type="hidden" id="addedCorrect" value="${addedCorrect}"/>-->
-<#--                    <#else>-->
-<#--                      <small class="input-text form-text text-danger" role="alert">-->
-<#--                          ${product.productName} could not be add to your shopping cart.-->
-<#--                      </small>-->
-<#--                    </#if>-->
-<#--                </#if>-->
+            <button class="product-add__button" type="submit">
+              <i class="fa fa-shopping-cart"></i>ADD TO CART
+            </button>
+          </div>
+          <button class="product-add__button-disabled" id="outOfStock" type="submit" disabled>Out of Stock
+          </button>
         </form>
       </div>
 
@@ -132,4 +108,48 @@
   //Default image
   <#if productContentId?has_content>changeLargeImage("${productContentId}");</#if>
 
+    var variants = ${Static["groovy.json.JsonOutput"].toJson((variantsList.variantOptions)![])}
+    var selectedProductId = '${selectedOptionId!''}';
+
+    document.body.onload = function() {
+      var featureSelects = document.getElementsByClassName("featureSelect");
+
+      for(var i = 0; i < featureSelects.length; i++) {
+        featureSelects[i].onchange = function() {
+          applyFeatureFilters();
+        }
+      }
+      applyFeatureFilters();
+    }
+
+
+    function applyFeatureFilters() {
+      var filtered = variants.slice();
+      var featureSelects = document.getElementsByClassName("featureSelect");
+      for(var i = 0; i < featureSelects.length; i++) {
+        var combo = featureSelects[i];
+        // ignore selects that have not been set
+        if (!combo.value)
+            continue; 
+        filtered = filtered.filter(function(variant) {
+            return variant[combo.name] == combo.value;
+        })
+      };
+
+      // If just one variant remains, show/hide add to cart buttons
+      if (filtered.length == 1){
+        if(filtered[0].quantity > 0) {
+          document.getElementById("addToCartSection").style.display = "block";
+          document.getElementById("outOfStock").style.display = "none";
+          document.getElementById("productId").value = filtered[0].productId;
+        } else {
+          document.getElementById("addToCartSection").style.display = "none";
+          document.getElementById("outOfStock").style.display = "block";
+          document.getElementById("productId").value = '';
+        }
+      } else {
+        document.getElementById("addToCartSection").style.display = "none";
+        document.getElementById("outOfStock").style.display = "none";
+      }
+    }
 </script>

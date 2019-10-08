@@ -8,6 +8,7 @@
 .product-content {
   display: grid;
   grid-template-columns: 2fr 1fr;
+  grid-gap: 50px;
   padding: 100px;
 }
 
@@ -31,12 +32,62 @@
 
 .product-add {
   display: grid;
-  grid-auto-rows: auto;
-  justify-items: center;
+  grid-auto-rows: min-content;
   align-items: center;
 
   &__product-name {
+    //grid-row: 1;
     font-size: 2rem;
     text-transform: uppercase;
   }
+
+  &__product-price {
+    //grid-row: 2;
+  }
+
+  &__old-price {
+    //grid-row: 2;
+    color: $gray-color;
+    font-size: 1rem;
+  }
+
+  &__features {
+    margin-top: 20px;
+    display: grid;
+    grid-auto-rows: auto;
+  }
+
+  &__feature-name {
+    padding: 10px 0;
+  }
+
+  &__quantity {
+    margin-top: 20px;
+    display: grid;
+    grid-auto-columns: 1fr 1fr;
+    padding: 10px 0;
+  }
+
+  &__quantity-input {
+    text-align: center;
+    margin-left: 20px;
+    width: 100px;
+  }
+
+  &__button {
+    color: $primary-color;
+    background-color: $secondary-color;
+    margin-top: 20px;
+    font-size: 1rem;
+    height: 55px;
+    letter-spacing: 2px;
+  }
+
+  &__button-disabled {
+    margin-top: 20px;
+    font-size: 1rem;
+    height: 55px;
+    letter-spacing: 2px;
+  }
+
 }

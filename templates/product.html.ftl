@@ -55,76 +55,72 @@
             <#elseif searchParameter??>
               <input type="hidden" value="${searchParameter}" name="searchParameter"/>
             </#if>
-            <span class="product-add__product-name">${product.productName}</span>
-              <#-- if the list price is bigger than the current price, show the saving -->
-<#--            <#if (product.listPrice?? && product.listPrice > product.price)>-->
-<#--              <div class="promo-info text-center">-->
-<#--                  <span class="save-circle" v-if="product.listPrice">-->
-<#--                      <span class="save-circle-title">SAVE</span>-->
-<#--                      <span class="save-circle-text">$${(product.listPrice - product.price)?string(",##0.00")}</span>-->
-<#--                  </span>-->
-<#--              </div>-->
-<#--            </#if>-->
-              <span id="">$${product.price}</span>
-                <#if (product.listPrice?? && product.listPrice > product.price)>
-                  <span>
-                        <span>was</span>
-                        <del>$${product.listPrice}</del>
-                    </span>
-                </#if>
-            <div class="">
-              <input type="hidden" value="<#if selectedOptionId??>${selectedOptionId}<#else>${productId}</#if>" name="productId" id="productId" />
-              <input type="hidden" value="${product.priceUomId}" name="currencyUomId" />
-              <input type="hidden" value="${ec.web.sessionToken}" name="moquiSessionToken"/>
-              <span class="">Quantity</span>
-              <input class="" id="quantity" name="quantity" value="1" type="number" min="1" max="20" />
-            </div>
-              <#if isVirtual>
-                <div class="form-group col">
-                    <#assign featureTypes = variantsList.variantOptions.keySet()>
-<#--                    <#list featureTypes![] as featureType>-->
-                    <#list featureTypes?filter(featureType -> featureType.description != "Color")![] as featureType>
-                        ${featureType.description!}
-                        <#assign variants = variantsList.variantOptions.get(featureType)>
-<#--                      <span>variants: ${variants}</span>-->
+            <input type="hidden" value="<#if selectedOptionId??>${selectedOptionId}<#else>${productId}</#if>" name="productId" id="productId" />
+            <input type="hidden" value="${product.priceUomId}" name="currencyUomId" />
+            <input type="hidden" value="${ec.web.sessionToken}" name="moquiSessionToken"/>
 
-                      <select class="form-control" id="variantProduct${featureType?index}" required>
-                        <option value="" disabled <#if !selectedOptionId?? >selected</#if>>
-                          Select an Option
+            <#if isVirtual>
+              <#assign featureTypes = variantsList.variantOptions.keySet()>
+            </#if>
+
+            <div class="product-add__product-name">${product.productName}</div>
+            <div class="product-add__product-price">
+                <#if (product.listPrice?? && product.listPrice > product.price)>
+                  <del class="product-add__old-price">$${product.listPrice}</del><span id=""> $${product.price}</span>
+                <#else>
+                  <span id="">$${product.price}</span>
+                </#if>
+            </div>
+          <div class="product-add__features">
+          <#if isVirtual>
+              <#assign featureTypes = variantsList.listFeatures.keySet()>
+              <#list featureTypes![] as featureType>
+                <#assign variants = variantsList.listFeatures.get(featureType)>
+                <span class="product-add__feature-name">${featureType.description}</span>
+                  <select id="variantProduct${featureType?index}" required>
+                    <option value="" disabled <#if !selectedOptionId?? >selected</#if>>
+                        <#if featureType.description == "Size">Pick a size
+                        <#elseif featureType.description == "Color">Pick a color
+                        <#else>Select an Option
+                        </#if>
+                    </option>
+                      <#list variants![] as variant>
+                          <#assign isSelected = selectedOptionId?? && selectedOptionId == variant.productId />
+                        <option value="${variant.productId!}" <#if isSelected >selected</#if>>
+                            ${variant.description}
                         </option>
-                          <#list variants![] as variant>
-                              <#assign isSelected = selectedOptionId?? && selectedOptionId == variant.productId />
-                            <option value="${variant.productId!}" <#if isSelected >selected</#if> >
-                                ${variant.description}
-                            </option>
-                          </#list>
-                      </select>
-                    </#list>
-                </div>
-              </#if>
-            <div class="form-group col">
-                <#if isVirtual || inStock>
-                  <button id="addToCart" class="btn btn-info btn-block" type="submit">
-                    <i class="fa fa-shopping-cart"></i> Add to Cart
+                      </#list>
+                  </select>
+                </span>
+              </#list>
+            </#if>
+          </div>
+
+            <div class="product-add__quantity">
+              <label class="">Quantity <input class="product-add__quantity-input" name="quantity" value="1" type="number" min="1" max="20"/></label>
+            </div>
+
+                <#if inStock>
+                  <button class="product-add__button" type="submit">
+                    <i class="fa fa-shopping-cart"></i>ADD TO CART
                   </button>
                 </#if>
-                <#if isVirtual || !inStock>
-                  <h5 id="outOfStockText" class="text-center">Out of Stock</h5>
+                <#if !inStock>
+                  <button class="product-add__button-disabled" type="submit" disabled>Out of Stock
+                  </button>
                 </#if>
               <!-- feedback add product -->
-                <#if addedCorrect??>
-                    <#if addedCorrect == 'true'>
-                      <input type="hidden" id="addedCorrect" value="${addedCorrect}"/>
-                    <#else>
-                      <small class="input-text form-text text-danger" role="alert">
-                          ${product.productName} could not be add to your shopping cart.
-                      </small>
-                    </#if>
-                </#if>
-            </div>
+<#--                <#if addedCorrect??>-->
+<#--                    <#if addedCorrect == 'true'>-->
+<#--                      <input type="hidden" id="addedCorrect" value="${addedCorrect}"/>-->
+<#--                    <#else>-->
+<#--                      <small class="input-text form-text text-danger" role="alert">-->
+<#--                          ${product.productName} could not be add to your shopping cart.-->
+<#--                      </small>-->
+<#--                    </#if>-->
+<#--                </#if>-->
         </form>
       </div>
-<#--    </div>-->
 
 </main>
 <script>

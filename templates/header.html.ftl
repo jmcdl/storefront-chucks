@@ -1,3 +1,11 @@
+<#assign cartCount = 0>
+<#if cartInfo.orderItemList??>
+    <#list cartInfo.orderItemList as item>
+        <#if item.itemTypeEnumId == "ItemProduct">
+            <#assign cartCount = cartCount + (item.quantity!1)>
+        </#if>
+    </#list>
+</#if>
 <header class="header">
   <div class="top-bar">
     <a class="top-bar__text" href="#">Up & Receive $50 Off Purchases Of $150 Or More</a>
@@ -50,7 +58,7 @@
                 d="M45.684,2.654c-6.057,0-11.27,4.927-13.684,10.073 c-2.417-5.145-7.63-10.073-13.687-10.073c-8.349,0-15.125,6.776-15.125,15.127c0,16.983,17.134,21.438,28.812,38.231 c11.038-16.688,28.811-21.787,28.811-38.231C60.811,9.431,54.033,2.654,45.684,2.654z"></path>
         </svg>
       </li>
-      <li  class="navbar__user-menu-item">Cart</li>
+      <li  class="navbar__user-menu-item">Cart <#if cartCount gt 0>(${cartCount}</#if></li>
     </ul>
   </nav>
 

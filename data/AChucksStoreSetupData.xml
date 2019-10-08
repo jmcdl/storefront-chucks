@@ -42,7 +42,7 @@ along with this software (see the LICENSE.md file). If not, see
 		<shipOptions carrierPartyId="_NA_" shipmentMethodEnumId="ShMthNextDay" sequenceNum="2"/>
 		<shippingGateways carrierPartyId="_NA_" shippingGatewayConfigId="NA_LOCAL"/>
 		<paymentGateways paymentInstrumentEnumId="PiCreditCard" paymentGatewayConfigId="TEST_APPROVE"/>
-		<settings productStoreId="CHUCKS_STORE" settingTypeEnumId="PsstHostname" settingValue="chucks.com"/>
+		<settings productStoreId="CHUCKS_STORE" settingTypeEnumId="PsstHostname" settingValue="chucks.test"/>
 		<settings productStoreId="CHUCKS_STORE" settingTypeEnumId="PsstTemplateServerRoot" settingValue="component://storefront-chucks/templates/root.html.ftl"/>
 		<settings productStoreId="CHUCKS_STORE" settingTypeEnumId="PsstTemplateServerHeader" settingValue="component://storefront-chucks/templates/header.html.ftl"/>
 		<settings productStoreId="CHUCKS_STORE" settingTypeEnumId="PsstTemplateServerFooter" settingValue="component://storefront-chucks/templates/footer.html.ftl"/>

@@ -3,7 +3,7 @@
 // When the user scrolls the page, execute myFunction
 window.onscroll = function () {
   fixedNavbar();
-}
+};
 
 // Get the navbar
 let navbar = document.querySelector(".navbar");

@@ -55,9 +55,6 @@
             <#elseif searchParameter??>
               <input type="hidden" value="${searchParameter}" name="searchParameter"/>
             </#if>
-            <input type="hidden" value="" name="productId" id="productId" />
-            <input type="hidden" value="${product.priceUomId}" name="currencyUomId" />
-            <input type="hidden" value="${ec.web.sessionToken}" name="moquiSessionToken"/>
             <div class="product-add__product-name">${product.productName}</div>
             <div class="product-add__product-price">
                 <#if (product.listPrice?? && product.listPrice > product.price)>
@@ -67,23 +64,28 @@
                 </#if>
             </div>
           <div class="product-add__features">
-              <#assign features = (variantsList.listFeatures.keySet())![]>
-              <#list features as featureType>
-                  <#assign featureOpts = variantsList.listFeatures.get(featureType)>
-                  <#if featureOpts?size gt 1>
-                  ${featureType.description!}
-                  <select class="form-control featureSelect" name="${featureType.enumId}" required>
-                      <option value="" disabled selected>
-                          Select an Option 
-                      </option>
-                      <#list featureOpts![] as opt>
-                      <option value="${opt.productFeatureId}">
-                          ${opt.description!}  
-                      </option>
-                      </#list>
-                  </select>
-                  </#if>
-              </#list>
+            <input type="text" value="${product.pseudoId}" name="productId" id="productId" />
+            <input type="hidden" value="${product.priceUomId}" name="currencyUomId" />
+            <input type="hidden" value="${ec.web.sessionToken}" name="moquiSessionToken"/>
+            <#assign featureTypes = variantsList.listFeatures.keySet()>
+            <#assign arrayIds = [] />
+            <#list featureTypes![] as featureType>
+                
+                <#assign variants = variantsList.listFeatures.get(featureType)>
+                <#if variants?size gt 1 >
+                ${featureType.description!}
+                <select class="form-control featureSelect" name="${featureType.productFeatureTypeEnumId}" id="variantProduct${featureType?index}" required>
+                    <option value="" disabled selected>
+                        Select an Option 
+                    </option>
+                    <#list variants![] as variant>
+                        <option value="${variant.productFeatureId}">
+                            ${variant.description!} 
+                        </option>
+                    </#list>
+                </select>
+                </#if>
+            </#list>
           </div>
           <div id="addToCartSection">
             <div class="product-add__quantity">
@@ -99,7 +101,11 @@
       </div>
 
 </main>
+<script type="text/javascript" src="/store/assets/pdp.js"></script>
 <script>
+  var variants = ${Static["groovy.json.JsonOutput"].toJson((variantsList.variants)![])}
+  var selectedProductId = '${selectedOptionId!''}';
+
   const prodImageUrl = "${home}/content/productImage/";
   console.log(prodImageUrl);
   let productImageLarge = document.querySelector(".product-image__main");
@@ -108,48 +114,8 @@
   //Default image
   <#if productContentId?has_content>changeLargeImage("${productContentId}");</#if>
 
-    var variants = ${Static["groovy.json.JsonOutput"].toJson((variantsList.variantOptions)![])}
-    var selectedProductId = '${selectedOptionId!''}';
 
     document.body.onload = function() {
-      var featureSelects = document.getElementsByClassName("featureSelect");
-
-      for(var i = 0; i < featureSelects.length; i++) {
-        featureSelects[i].onchange = function() {
-          applyFeatureFilters();
-        }
-      }
-      applyFeatureFilters();
-    }
-
-
-    function applyFeatureFilters() {
-      var filtered = variants.slice();
-      var featureSelects = document.getElementsByClassName("featureSelect");
-      for(var i = 0; i < featureSelects.length; i++) {
-        var combo = featureSelects[i];
-        // ignore selects that have not been set
-        if (!combo.value)
-            continue; 
-        filtered = filtered.filter(function(variant) {
-            return variant[combo.name] == combo.value;
-        })
-      };
-
-      // If just one variant remains, show/hide add to cart buttons
-      if (filtered.length == 1){
-        if(filtered[0].quantity > 0) {
-          document.getElementById("addToCartSection").style.display = "block";
-          document.getElementById("outOfStock").style.display = "none";
-          document.getElementById("productId").value = filtered[0].productId;
-        } else {
-          document.getElementById("addToCartSection").style.display = "none";
-          document.getElementById("outOfStock").style.display = "block";
-          document.getElementById("productId").value = '';
-        }
-      } else {
-        document.getElementById("addToCartSection").style.display = "none";
-        document.getElementById("outOfStock").style.display = "none";
-      }
+        initializeFeatureSelects();
     }
 </script>

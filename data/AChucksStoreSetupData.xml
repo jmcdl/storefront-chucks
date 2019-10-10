@@ -48,6 +48,9 @@ along with this software (see the LICENSE.md file). If not, see
 		<settings productStoreId="CHUCKS_STORE" settingTypeEnumId="PsstTemplateServerFooter" settingValue="component://storefront-chucks/templates/footer.html.ftl"/>
 		<settings productStoreId="CHUCKS_STORE" settingTypeEnumId="PsstTemplateServerHome" settingValue="component://storefront-chucks/templates/home.html.ftl"/>
 		<settings productStoreId="CHUCKS_STORE" settingTypeEnumId="PsstTemplateServerProduct" settingValue="component://storefront-chucks/templates/product.html.ftl"/>
+		<settings productStoreId="CHUCKS_STORE" settingTypeEnumId="PsctHeaderTemplate" settingValue="/static/html/header.html"/>
+		<settings productStoreId="CHUCKS_STORE" settingTypeEnumId="PsctFooterTemplate" settingValue="/static/html/footer.html"/>
+		<settings productStoreId="CHUCKS_STORE" settingTypeEnumId="PsstTemplateClientLogin" settingValue="/static/html/login.html"/>
 	</mantle.product.store.ProductStore>
 
    <!--Default product categories-->

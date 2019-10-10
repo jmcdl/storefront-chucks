@@ -1,0 +1,31 @@
+<div class="login">
+    <navbar sub-bar="true"/>
+    <div class="login-content">
+        <form class="" @submit.prevent="login" method="post">
+            <h1 class="">Sign In</h1>
+            <div v-if="loginErrormessage && loginErrormessage.length" class="" role="alert">
+                {{loginErrormessage}}
+            </div>
+            <div class="">
+                <label for="" class="">Email</label>
+                    <input v-model="user.username" type="text" class="" required>
+            </div>
+            <div class="">
+                <label for="" class="">Password</label>
+                    <input v-model="user.password" type="password" class="" required>
+            </div>
+            <button class="" type="submit">Sign In</button>
+            <router-link :to="'/resetPassword'" tag="a">
+                <span class="">Forgot Your Password?</span>
+            </router-link>
+        </form>
+        <div class="">
+            <h1 class="">New Customer</h1>
+            <router-link :to="'/account/create'" tag="button" class="">Create an Account</router-link>
+            <p class="">
+                Create your account and grab your chucks!
+            </p>
+        </div>
+    </div>
+    <footer-page :infoLink="false" />
+</div>

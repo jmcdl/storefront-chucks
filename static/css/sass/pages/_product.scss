@@ -8,7 +8,7 @@
 .product-content {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  grid-gap: 50px;
+  grid-gap: 20px;
   padding: 100px;
 }
 
@@ -36,17 +36,14 @@
   align-items: center;
 
   &__product-name {
-    //grid-row: 1;
     font-size: 2rem;
     text-transform: uppercase;
   }
 
   &__product-price {
-    //grid-row: 2;
   }
 
   &__old-price {
-    //grid-row: 2;
     color: $gray-color;
     font-size: 1rem;
   }
@@ -80,6 +77,7 @@
     margin-top: 20px;
     font-size: 1rem;
     height: 55px;
+    width: 100%;
     letter-spacing: 2px;
   }
 

@@ -1,0 +1,19 @@
+.login {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+
+}
+
+.login-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  padding: 100px;
+  justify-items: center;
+
+  &__heading {
+    font-size: 1.6em;
+    font-weight: lighter;
+  }
+}

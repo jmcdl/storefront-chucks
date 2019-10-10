@@ -45,7 +45,6 @@
                alt="Product Image">
         </#if>
     </div>
-<#--    <div class="product-add">-->
         <#--  add to cart -->
         <form class="product-add" method="post" action="${home}/product/addToCart">
           <#-- if product arrived at via vategory or seach, will send that data with form-->
@@ -64,7 +63,7 @@
                 </#if>
             </div>
           <div class="product-add__features">
-            <input type="text" value="${product.pseudoId}" name="productId" id="productId" />
+            <input type="hidden" value="${product.pseudoId}" name="productId" id="productId" />
             <input type="hidden" value="${product.priceUomId}" name="currencyUomId" />
             <input type="hidden" value="${ec.web.sessionToken}" name="moquiSessionToken"/>
             <#assign featureTypes = variantsList.listFeatures.keySet()>
@@ -107,9 +106,7 @@
   var selectedProductId = '${selectedOptionId!''}';
 
   const prodImageUrl = "${home}/content/productImage/";
-  console.log(prodImageUrl);
   let productImageLarge = document.querySelector(".product-image__main");
-  console.log(productImageLarge);
   function changeLargeImage(productContentId) { productImageLarge.src = prodImageUrl + productContentId; }
   //Default image
   <#if productContentId?has_content>changeLargeImage("${productContentId}");</#if>

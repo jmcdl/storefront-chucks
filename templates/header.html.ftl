@@ -12,10 +12,10 @@
   </div>
   <nav class="navbar">
     <h1 class="navbar__logo">
-      <a href="/store" aria-label="Aquatalia®" title="Chucks Store">CHUCKS</a>
+      <a href="/store" aria-label="Chucks Store" title="Chucks Store">CHUCKS</a>
     </h1>
     <ul class="navbar__menu">
-      <li class="navbar__menu-item"><a class="" href="" title="">Women</a></a></li>
+      <li class="navbar__menu-item"><a class="" href="" title="">Women</a></li>
       <li class="navbar__menu-item"><a class="" href="" title="">Men</a></li>
       <li class="navbar__menu-item"><a class="" href="" title="">Accessories</a></li>
       <li class="navbar__menu-item"><a class="" href="" title="">Best Sellers</a></li>
@@ -27,7 +27,7 @@
         <img src="https://bfx-objects.borderfree.com/v1/dist/images/context-chooser/flags/US.gif"
              alt="United States">
       </li>
-      <li  class="navbar__user-menu-item">Sign In</li>
+      <li  class="navbar__user-menu-item"><a href="/store/d#/login">Sign In</a></li>
       <li class=" navbar__user-menu-item">
         <svg class="user-menu__icon" viewBox="0 0 12 16" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -58,7 +58,11 @@
                 d="M45.684,2.654c-6.057,0-11.27,4.927-13.684,10.073 c-2.417-5.145-7.63-10.073-13.687-10.073c-8.349,0-15.125,6.776-15.125,15.127c0,16.983,17.134,21.438,28.812,38.231 c11.038-16.688,28.811-21.787,28.811-38.231C60.811,9.431,54.033,2.654,45.684,2.654z"></path>
         </svg>
       </li>
-      <li  class="navbar__user-menu-item">Cart <#if cartCount gt 0>(${cartCount}</#if></li>
+      <#if cartCount gt 0>
+        <li class="navbar__user-menu-item"><a href="${home}/d#/checkout" >Cart (${cartCount})</a></li>
+      <#else>
+        <li class="navbar__user-menu-item"><a href="#" >Cart</a></li>
+      </#if>
     </ul>
   </nav>
 

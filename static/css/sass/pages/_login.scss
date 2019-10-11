@@ -12,8 +12,38 @@
   padding: 100px;
   justify-items: center;
 
+  &__login {
+    display: grid;
+    grid-template-rows: 1fr auto auto;
+    grid-gap: 20px;
+  }
+
   &__heading {
     font-size: 1.6em;
     font-weight: lighter;
   }
+
+  &__login-input {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+
+  &__button {
+    color: $primary-color;
+    background-color: $secondary-color;
+    margin-top: 20px;
+    font-size: 1rem;
+    height: 55px;
+    width: 100%;
+    letter-spacing: 2px;
+    align-self: end;
+  }
+
+  &__error {
+    margin-bottom: 0;
+    //font-size: 1.2em;
+    font-weight: lighter;
+    color: red;
+  }
+
 }

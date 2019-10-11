@@ -734,8 +734,28 @@ body {
   grid-gap: 20px;
   padding: 100px;
   justify-items: center; }
+  .login-content__login {
+    display: grid;
+    grid-template-rows: 1fr auto auto;
+    grid-gap: 20px; }
   .login-content__heading {
     font-size: 1.6em;
     font-weight: lighter; }
+  .login-content__login-input {
+    display: grid;
+    grid-template-columns: 1fr 2fr; }
+  .login-content__button {
+    color: #FFF;
+    background-color: #000;
+    margin-top: 20px;
+    font-size: 1rem;
+    height: 55px;
+    width: 100%;
+    letter-spacing: 2px;
+    align-self: end; }
+  .login-content__error {
+    margin-bottom: 0;
+    font-weight: lighter;
+    color: red; }
 
 /*# sourceMappingURL=style.css.map */

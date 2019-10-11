@@ -1,31 +1,32 @@
 <div class="login">
     <navbar sub-bar="true"/>
     <div class="login-content">
-        <form class="" @submit.prevent="login" method="post">
-            <h1 class="">Sign In</h1>
-            <div v-if="loginErrormessage && loginErrormessage.length" class="" role="alert">
-                {{loginErrormessage}}
-            </div>
-            <div class="">
-                <label for="" class="">Email</label>
+
+        <form class="login-content__login" @submit.prevent="login" method="post">
+            <h1 class="login-content__heading">Sign In</h1>
+            <div class="login-content__login-input">
+                <label for="username" class="">Username</label>
                     <input v-model="user.username" type="text" class="" required>
             </div>
-            <div class="">
-                <label for="" class="">Password</label>
+            <div class="login-content__login-input">
+                <label for="password" class="">Password</label>
                     <input v-model="user.password" type="password" class="" required>
             </div>
-            <button class="" type="submit">Sign In</button>
-            <router-link :to="'/resetPassword'" tag="a">
-                <span class="">Forgot Your Password?</span>
-            </router-link>
+            <div v-if="loginErrormessage && loginErrormessage.length" class="login-content__error" role="alert">
+                {{loginErrormessage}}
+            </div>
+            <button class="login-content__button" type="submit">Sign In</button>
+            <router-link class="" :to="'/resetPassword'" tag="a">Forgot Your Password?</router-link>
         </form>
-        <div class="">
-            <h1 class="">New Customer</h1>
-            <router-link :to="'/account/create'" tag="button" class="">Create an Account</router-link>
+
+        <div class="login-content__new">
+            <h1 class="login-content__heading">New Customer?</h1>
+            <router-link :to="'/account/create'" tag="button" class="login-content__button">Create an Account</router-link>
             <p class="">
                 Create your account and grab your chucks!
             </p>
         </div>
+
     </div>
     <footer-page :infoLink="false" />
 </div>

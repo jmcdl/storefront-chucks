@@ -6,7 +6,7 @@
       <div class="order-column__headings">
         <h2 class="order-column__heading">Item</h2>
         <h2 class="order-column__heading">Quantity</h2>
-        <h2 class="order-column__heading">Price</h2>
+        <h2 class="order-column__heading">Price (each)</h2>
       </div>
       <div class="order-column__product"
            v-if="item.itemTypeEnumId != 'ItemShipping'"
@@ -27,7 +27,7 @@
         </div>
       </div>
 
-      <div class="order-column__total">
+      <div class="order-column__subtotal">
         <h3 class="order-column__text">Subtotal</h3>
         <div></div>
         <div>
@@ -35,16 +35,16 @@
         </div>
       </div>
 
-      <div class="order-column__total">
+      <div class="order-column__subtotal">
         <h3 class="order-column__text">Shipping</h3>
         <div></div>
         <div class="order-column__text">{{ shippingPrice !== 0 ? "$" + shippingPrice.toFixed(2) : "FREE" }}</div>
       </div>
       <div class="order-column__total">
-        <h3 class="order-column__heading">Total</h3>
+        <h3 class="order-column__total-text">Total</h3>
         <div></div>
         <div>
-          <div class="order-column__heading" v-if="productsInCart.orderHeader">${{productsInCart.orderHeader.grandTotal.toFixed(2)}}</div>
+          <div class="order-column__total-text" v-if="productsInCart.orderHeader">${{productsInCart.orderHeader.grandTotal.toFixed(2)}}</div>
         </div>
       </div>
 

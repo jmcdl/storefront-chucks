@@ -76,12 +76,26 @@
     width: 50%;
   }
 
-  &__total {
+  &__subtotal {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
     align-items: center;
     justify-items: center;
   }
 
+  &__total {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    border-bottom: 1px solid $gray-color;
+    border-top: 1px solid $gray-color;
+  }
+
+  &__total-text {
+    font-size: 1.2em;
+    font-weight: lighter;
+    margin: 20px 0;
+  }
 }
 

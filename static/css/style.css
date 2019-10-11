@@ -780,11 +780,22 @@ body {
     font-weight: lighter;
     text-align: center;
     width: 50%; }
-  .order-column__total {
+  .order-column__subtotal {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
     align-items: center;
     justify-items: center; }
+  .order-column__total {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    border-bottom: 1px solid #616365;
+    border-top: 1px solid #616365; }
+  .order-column__total-text {
+    font-size: 1.2em;
+    font-weight: lighter;
+    margin: 20px 0; }
 
 .login {
   min-height: 100vh;

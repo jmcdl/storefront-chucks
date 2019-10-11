@@ -19,7 +19,7 @@
   <div class="social-icons">
     <ul class="social-icons__menu">
       <li class="social-icons__menu-item">
-        <a href="//www.facebook.com/Aquatalia" target="_blank" title="Go to your facebook account"
+        <a href="//www.facebook.com/" target="_blank" title="Go to your facebook account"
            aria-label="Go to your facebook account">
           <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-facebook"
                viewBox="0 0 512 512">
@@ -28,7 +28,7 @@
         </a>
       </li>
       <li class="social-icons__menu-item">
-        <a href="//instagram.com/aquatalia" target="_blank" title="Go to your instagram account"
+        <a href="//instagram.com/" target="_blank" title="Go to your instagram account"
            aria-label="Go to your instagram account">
           <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-instagram"
                viewBox="0 0 512 512">
@@ -38,7 +38,7 @@
         </a>
       </li>
       <li class="social-icons__menu-item">
-        <a href="//www.pinterest.com/aquatalia" target="_blank" title="Go to your pinterest account"
+        <a href="//www.pinterest.com/" target="_blank" title="Go to your pinterest account"
            aria-label="Go to your pinterest account">
           <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-pinterest"
                viewBox="0 0 17 20">

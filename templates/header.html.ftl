@@ -27,7 +27,11 @@
         <img src="https://bfx-objects.borderfree.com/v1/dist/images/context-chooser/flags/US.gif"
              alt="United States">
       </li>
-      <li  class="navbar__user-menu-item"><a href="/store/d#/login">Sign In</a></li>
+        <#if partyDetail??>
+          <li  class="navbar__user-menu-item"><a href="/store/logOut">Signout</a></li>
+        <#else>
+          <li  class="navbar__user-menu-item"><a href="/store/d#/login">Sign In</a></li>
+        </#if>
       <li class=" navbar__user-menu-item">
         <svg class="user-menu__icon" viewBox="0 0 12 16" xmlns="http://www.w3.org/2000/svg">
           <defs>

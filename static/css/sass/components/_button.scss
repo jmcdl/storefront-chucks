@@ -1,3 +1,13 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the button component.
 // -----------------------------------------------------------------------------
+
+.primary-button {
+  color: $primary-color;
+  background-color: $secondary-color;
+  margin-top: 20px;
+  font-size: 1rem;
+  height: 55px;
+  width: 100%;
+  letter-spacing: 2px;
+}

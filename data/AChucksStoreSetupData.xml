@@ -14,6 +14,8 @@ along with this software (see the LICENSE.md file). If not, see
 -->
 <entity-facade-xml type="demo">
 
+	<moqui.basic.Enumeration enumCode="template_client_modalAddress" description="Template Client Address Modal" enumId="PsctTemplateClientModalAddress" enumTypeId="ProductStoreSettingType"/>
+
 	<mantle.party.Party partyId="ORG_FACELESS_CORP" pseudoId="FACELESS_CORP" partyTypeEnumId="PtyOrganization" ownerPartyId="ORG_FACELESS_CORP">
 		<organization organizationName="Faceless Global Textile Distributor"/>
 		<roles roleTypeId="OrgInternal"/>
@@ -53,6 +55,8 @@ along with this software (see the LICENSE.md file). If not, see
 		<settings productStoreId="CHUCKS_STORE" settingTypeEnumId="PsstTemplateClientLogin" settingValue="/static/html/login.html"/>
 		<settings productStoreId="CHUCKS_STORE" settingTypeEnumId="PsstTemplateClientCheckoutHeader" settingValue="/static/html/checkout-header.html"/>
 		<settings productStoreId="CHUCKS_STORE" settingTypeEnumId="PsstTemplateClientCheckout" settingValue="/static/html/checkout.html"/>
+		<settings productStoreId="CHUCKS_STORE" settingTypeEnumId="PsstTemplateClientCheckout" settingValue="/static/html/checkout.html"/>
+		<settings productStoreId="CHUCKS_STORE" settingTypeEnumId="PsctTemplateClientModalAddress" settingValue="/static/html/address-modal.html"/>
 	</mantle.product.store.ProductStore>
 
    <!--Default product categories-->

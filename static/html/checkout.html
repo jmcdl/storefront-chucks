@@ -35,7 +35,7 @@
         </div>
       </div>
 
-      <div class="order-column__subtotal">
+      <div class="order-column__shipping">
         <h3 class="order-column__text">Shipping</h3>
         <div></div>
         <div class="order-column__text">{{ shippingPrice !== 0 ? "$" + shippingPrice.toFixed(2) : "FREE" }}</div>
@@ -49,7 +49,7 @@
       </div>
 
     </div>
-    <!-- The whole checkout stage column -->
+
     <div class="customer-column">
       <!-- Shipping Address section title and change button -->
       <p class="title-check-text"
@@ -117,16 +117,25 @@
         </div>
         <br>
         <!-- Buttons    -->
-        <button
-            @click="addressContinue()" class="btn btn-continue float-right"
-            :disabled="addressOption == null || addressOption == ''
-                        || listShippingAddress == null || listShippingAddress.length == 0 ">
-          Continue
-        </button>
-        <a data-toggle="modal" data-target="#addressFormModal" class="text-add"
-           @click="resetData()">
-          Add a New Address
-        </a>
+<!--        <button-->
+<!--            @click="addressContinue()" class="btn btn-continue float-right"-->
+<!--            :disabled="addressOption == null || addressOption == ''-->
+<!--                        || listShippingAddress == null || listShippingAddress.length == 0 ">-->
+<!--          Continue-->
+<!--        </button>-->
+        <button v-if="addressOption == null || addressOption == '' || listShippingAddress == null || listShippingAddress.length == 0 "
+           class="primary-button" href="#addressFormModal" @click="resetData()">Add a New Address</button>
+<!--        <button v-else-->
+<!--            @click="addressContinue()" class="btn btn-continue float-right"-->
+<!--            :disabled="addressOption == null || addressOption == ''-->
+<!--                        || listShippingAddress == null || listShippingAddress.length == 0 ">-->
+<!--          Continue-->
+<!--        </button>-->
+<!--        <a href="#openModal">Open Modal</a>-->
+
+        <div id="addressFormModal" class="addressFormModal">
+          <modal-address :shippingAddress="shippingAddress" :isUpdate="isUpdate" :cancelCallback="onAddressCancel" :completeCallback="onAddressUpserted" />
+        </div>
       </div>
       <br/>
 
@@ -293,9 +302,9 @@
   <!--            </div>-->
 
   <!--            <div class="modal fade" id="addressFormModal">-->
-  <!--                <div class="modal-dialog" role="document">-->
-  <!--                    <modal-address :shippingAddress="shippingAddress" :isUpdate="isUpdate" :cancelCallback="onAddressCancel" :completeCallback="onAddressUpserted" />-->
-  <!--                 </div>-->
+<!--                  <div class="modal-dialog" role="document">-->
+<!--                      <modal-address :shippingAddress="shippingAddress" :isUpdate="isUpdate" :cancelCallback="onAddressCancel" :completeCallback="onAddressUpserted" />-->
+<!--                   </div>-->
   <!--            </div>-->
 
   <!--            <div class="modal fade" id="creditCardModal">&lt;!&ndash; Credit Card Modal &ndash;&gt;-->

@@ -26,6 +26,7 @@
   grid-template-rows: auto 1fr auto;
 }
 
+
 .checkout-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -36,6 +37,12 @@
 
 .customer-column {
   width: 100%;
+
+  &__heading {
+    font-size: 1.2em;
+    font-weight: lighter;
+    margin-bottom: 10px;
+  }
 
 }
 
@@ -52,7 +59,6 @@
   &__heading {
     font-size: 1.2em;
     font-weight: lighter;
-    //margin-left: 50px;
     margin-bottom: 10px;
   }
 
@@ -61,6 +67,7 @@
     grid-template-columns: 2fr 1fr 1fr;
     align-items: center;
     justify-items: center;
+    margin: 20px 0;
   }
 
   &__text {
@@ -77,6 +84,14 @@
   }
 
   &__subtotal {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    border-top: 1px solid $gray-color;
+  }
+
+  &__shipping {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
     align-items: center;
@@ -98,4 +113,9 @@
     margin: 20px 0;
   }
 }
+
+
+
+
+
 

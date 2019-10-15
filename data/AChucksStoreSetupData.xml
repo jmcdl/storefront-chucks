@@ -21,7 +21,7 @@ along with this software (see the LICENSE.md file). If not, see
 		<roles roleTypeId="OrgInternal"/>
 	</mantle.party.Party>
 
-	<mantle.party.Party partyId="ORG_CHUCKS" pseudoId="CHUCKS" partyTypeEnumId="PtyOrganization" ownerPartyId="ORG_CHUCKS">
+	<mantle.party.Party partyId="ORG_CHUCKS" pseudoId="CHUCKS" partyTypeEnumId="PtyOrganization" ownerPartyId="ORG_FACELESS_CORP">
 		<organization organizationName="Chucks Company"/>
 		<roles roleTypeId="OrgInternal"/>
 	</mantle.party.Party>

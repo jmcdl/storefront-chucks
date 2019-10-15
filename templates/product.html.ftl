@@ -9,7 +9,7 @@
 </#if>
 <main class="">
   <div class="product-breadcrumb">
-    Shoes / Chucks / BLUE
+    Shoes / Chucks / PURPLE CHUCKS
   </div>
   <div class="product-content">
     <div class="product-image">
